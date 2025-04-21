@@ -9,11 +9,6 @@
 		<title>HyperCPU Project</title>
 	</head>
 	<body>
-        <a name="home"></a>
-        <a name="install"></a>
-        <a name="docs"></a>
-        <a name="faq"></a>
-        <a name="links"></a>
         <div class="center"><div class="menu">
             <a href="#home" onclick="javascript:switchSection('home');" class="button menu-button">
                 <img src="images/home.svg" class="inversible">
@@ -43,7 +38,7 @@
             <h3>
                 The <i>hyper</i> toolkit for custom <i>hyper</i> <abbr title="Instruction set architecture">ISA</abbr>.
                 <br>
-                An experimental project of HyperWin and contributors.
+                An experimental project of HyperWin and contributors
             </h3>
             <br>
             <div class="flex-row">
@@ -51,48 +46,59 @@
                     <img src="images/install.svg" class="inversible">
                     Install
                 </a>
-                <a href="https://github.com/HyperWinX/HyperCPU" target="_blank" class="button">
-                    <img src="images/source-code.svg" class="inversible">
-                    Source code
+                <a href="#docs" onclick="javascript:switchSection('docs');" class="button">
+                    <img src="images/docs.svg" class="inversible">
+                    Read the manual
                 </a>
                 <a href="#links" onclick="javascript:switchSection('links');" class="button">
                     <img src="images/contribute.svg" class="inversible">
                     Contribute
                 </a>
             </div>
+            <br><br>
             <img src="images/screenshot.png">
+            <br><br>
+            <h3>
+                The website is in active development and may contain a lot of bugs.
+                You can help the development by contributing to its <a href="https://github.com/HyperCPU-Project/hypercpu-project.github.io" target="_blank">GitHub repository</a>.
+            </h3>
         </div>
         <div class="content hidden text-center" id="install-section">
             <br><br>
             <h1>Install HyperCPU</h1>
-            <h3>HyperCPU supports 64-bit GNU/Linux systems.</h3>
+            <br>
+            <h2>HyperCPU ISA</h2>
+            <h3>HyperCPU ISA and its toolkit (assembler and emulator)</h3>
             <br>
             <div class="flex-row">
-                <a href="https://github.com/HyperWinX/HyperCPU/releases/latest" target="_blank" class="button">
+                <a href="https://github.com/HyperWinX/HyperCPU" target="_blank" class="button">
                     <img src="images/source-code.svg" class="inversible">
                     Source code
                 </a>
             </div>
             <br>
+            <h2>Hyper C Compiler (hcc)</h2>
+            <h3>A multi-backend K&amp;R style C compiler with experimental HyperCPU support (as backend)</h3>
+            <br>
+            <div class="flex-row">
+                <a href="https://github.com/HyperCPU-Project/hcc" target="_blank" class="button">
+                    <img src="images/source-code.svg" class="inversible">
+                    Source code
+                </a>
+            </div>
+            <br>
+            <h4>HyperCPU Project currently does not provide pre-compiled binaries for its tools, but we are working on it.</h4>
             <h4>It is strongly adviced to read <i>README</i> before installing, since it contains many useful and important information about installation process.</h4>
         </div>
         <div class="content hidden text-center" id="docs-section">
             <br><br>
-            <h1>Documentation?</h1>
-            <h3>What is documentation?</h3>
-            <br>
-            <div class="flex-row">
-                <a href="" class="button">
-                    <img src="images/docs.svg" class="inversible">
-                    Documentation?
-                </a>
-            </div>
+            <h1>Documentation</h1>
+            <h3>Read <i>README</i> files in repositories you are interested in.</h4>
         </div>
         <div class="content hidden text-center" id="faq-section">
             <br><br>
-            <h1>Frequently Asked Questions</h1>
-            <h3>Questions?</h3>
-            <!-- TODO: Questions? -->
+            <h1><s>Frequently Asked</s> Questions</h1>
+            <h3>Nobody asked us any questions yet, unfortunately.</h3>
         </div>
         <div class="content hidden text-center" id="links-section">
             <br><br>
@@ -100,14 +106,20 @@
             <br>
             <div class="flex-row">
                 <a href="https://github.com/orgs/HyperCPU-Project" target="_blank" class="button">
-                    <img src="images/github.svg" class="inversible">
                     GitHub
                 </a>
                 <a href="https://t.me/HyperCPUProject" target="_blank" class="button">
-                    <img src="images/telegram.svg" class="inversible">
                     Telegram
                 </a>
             </div>
+            <br>
+            <h1>Team Members</h1>
+            <h2><a href="https://github.com/HyperWinX" target="_blank">HyperWin</a></h2>
+            <h4><i>HyperCPU Project Founder, HyperCPU Lead Developer and Documentation Author</i></h4>
+            <h2><a href="https://github.com/aceinetx" target="_blank">aceinetx</a></h2>
+            <h4><i>Hyper C Compiler (hcc) Lead Developer</i></h4>
+            <h2><a href="https://github.com/ivan-movchan" target="_blank">Ivan Movchan</a></h2>
+            <h4><i>HyperCPU Beta Tester, Website Developer, Artist</i></h4>
         </div>
         <script src="js/script.js" lang="JavaScript"></script>
 	</body>
