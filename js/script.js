@@ -1,19 +1,23 @@
-var sections = [ "home", "install", "docs", "faq", "links" ];
-var currentSection = sections[0];
+var sections = document.getElementsByClassName("section");
+var currentSection = sections[0].id;
 
-function switchSection(newSection) {
-    sections.forEach((section) => {
-        document.getElementById(section + "-section").classList.add("hidden");
-    });
-
-    document.getElementById(newSection + "-section").classList.remove("hidden");
-}
-
-if (document.baseURI.lastIndexOf("#") !== -1) {
-    currentSection = document.baseURI.substr(document.baseURI.lastIndexOf("#") + 1).toLowerCase();
-    if (document.getElementById(currentSection + "-section") === null) {
-         currentSection = sections[0];
+function onload() {
+    currentSection = sections[0].id;
+    console.log(document.baseURI);
+    
+    if (document.baseURI.lastIndexOf("#") !== -1) {
+        currentSection = document.baseURI.substr(document.baseURI.lastIndexOf("#") + 1).toLowerCase() + "-section";
+        if (document.getElementById(currentSection) === null) {
+            currentSection = sections[0].id;
+        };
     };
-};
 
-switchSection(currentSection);
+    for (var section in [].slice.call(sections)) {
+        var sectionID = sections[section].id;
+        document.getElementById(sectionID).classList.add("hidden");
+        document.getElementById(sectionID.replace("section", "button")).classList.remove("menu-button-active-section");
+    };
+
+    document.getElementById(currentSection).classList.remove("hidden");
+    document.getElementById(currentSection.replace("section", "button")).classList.add("menu-button-active-section");
+};

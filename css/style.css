@@ -1,35 +1,42 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat.ttf');
+    src: url('/fonts/Montserrat.ttf');
 }
 
 @font-face {
     font-family: 'Montserrat Italic';
-    src: url('../fonts/Montserrat-Italic.ttf');
+    src: url('/fonts/MontserratItalic.ttf');
 }
 
 :root {
     --page-bg: #ffffff;
     --page-fg: #000000;
-    --link-bg: transparent;
     --link-fg: #888888;
     --menu-bg: #eeeeee;
     --menu-fg: #000000;
     --button-bg: #eeeeee;
     --button-fg: #000000;
+    --button-border: #eeeeee;
     --button-hover-bg: #cccccc;
     --button-hover-fg: #000000;
+    --button-hover-border: #404040;
     --button-active-bg: #888888;
     --button-active-fg: #000000;
+    --button-active-border: #000000;
+    --menu-button-active-section-bg: #cccccc;
+    --menu-button-active-section-fg: #000000;
+    --menu-button-active-section-border: #000000;
+    --image-avatar-border: #404040;
 }
 
 :root {
-    --padding: 16px 32px;
-    --padding-left-right: 32px;
-    --content-width: 60em;
-    --transition: 0.25s ease;
-    --menu-animation-time: 0.5s;
-    --border-radius: 10px;
+    --padding: 8px 24px;
+    --padding-left-right: 24px;
+    --button-padding: 16px 24px;
+    --menu-button-padding: 8px 24px;
+    --flex-gap: 8px 0px;
+    --content-width: 800px;
+    --max-image-width: calc(var(--content-width) - calc(var(--padding-left-right) * 2));
     --font: 'Montserrat', system-ui, sans-serif;
     --font-italic: 'Montserrat Italic', system-ui, sans-serif;
     --font-size: 16px;
@@ -37,7 +44,12 @@
     --button-image-size: 32px;
     --menu-button-text-size: 16px;
     --menu-button-image-size: 24px;
-    --shadow: 0px 0px 10px;
+    --border: 1px solid;
+    --border-radius: 10px;
+    --abbr-border: 2px dotted;
+    --shadow: 0px 0px 20px;
+    --transition: 0.25s ease;
+    --menu-animation-time: 0.5s;
 }
 
 * {
@@ -68,13 +80,12 @@ html, body {
 }
 
 body {
-    margin: 0px auto;
-    padding: var(--padding);
-    overflow-y: scroll;
+    margin: 0px auto; padding: 0px 0px;
 	font-family: var(--font); font-size: var(--font-size);
+    overflow-y: scroll;
 }
 
-body, img, .menu {
+body, .menu {
     max-width: var(--content-width);
 }
 
@@ -83,23 +94,15 @@ h1, h2, h3, h4, h5, h6, b, .button {
 }
 
 a {
-    background-color: var(--link-bg);
 	color: var(--link-fg);
-	border-bottom: var(--border) transparent;
+    text-decoration: none;
 }
 
-a, abbr, u {
-	text-decoration: none;
-}
-
-a:hover, a:focus, u {
-    background-color: transparent;
+a:hover, a:focus {
     color: var(--page-fg);
-	border-bottom: var(--border) var(--page-fg);
 }
 
 abbr {
-    border-bottom: 2px dotted var(--page-fg);
     cursor: help;
 }
 
@@ -108,11 +111,20 @@ i {
 }
 
 img {
-    width: calc(var(--content-width) * 0.75);
+    width: 100%; max-width: fit-content;
+}
+
+.gallery-image {
+    box-shadow: var(--shadow) var(--link-fg);
+}
+
+.gallery-image:hover, .gallery-image:focus, .gallery-image:active, a:hover .gallery-image, a:focus .gallery-image, a:active .gallery-image {
+    box-shadow: var(--shadow) var(--page-fg);
 }
 
 .center {
 	display: flex; flex-direction: column; justify-content: center; align-items: center;
+    gap: var(--flex-gap);
 }
 
 .text-center {
@@ -126,16 +138,13 @@ img {
 
 .hidden {
     opacity: 0;
-    pointer-events: none;
-    user-select: none;
-    max-height: 0vh;
+    pointer-events: none; user-select: none;
+    max-height: 0px;
 }
 
-.content {
-    margin: 48px auto;
-    padding: var(--padding);
+.section {
     position: absolute;
-    width: calc(var(--content-width) - (var(--padding-left-right) * 2));
+    margin: 64px auto;
     max-height: 1000vh;
 }
 
@@ -145,41 +154,38 @@ img {
 
 .menu {
     z-index: 1;
-    position: fixed;
-    top: 16px;
+    position: absolute; top: 8px;
+    margin: 0px auto; padding: 8px 16px;
     display: flex; justify-content: center; align-items: center;
-    padding: 0px var(--padding-left-right);
-    background-color: var(--menu-bg);
-    color: var(--menu-fg);
+    gap: 0px 4px;
+    background-color: var(--menu-bg); color: var(--menu-fg);
     animation: menu-animation var(--menu-animation-time) 0s 1 ease forwards;
 }
 
-.menu .button {
-    border-radius: 0px;
+.section {
+    width: 100%; max-width: var(--content-width);
 }
 
 .button, .menu-button {
-	padding: var(--padding);
-	cursor: pointer; user-select: none;
+	padding: var(--button-padding);
     display: flex; justify-content: center; align-items: center;
-    gap: 0px 8px;
-    line-height: 1;
+    gap: 0px 4px;
     background-color: var(--button-bg);
     color: var(--button-fg);
+    border: var(--border) var(--button-border);
+    cursor: pointer; user-select: none;
+    text-decoration: none;
+    line-height: 1;
 }
 
 .button:hover, .menu-button:hover, .button:focus, .menu-button:focus {
-    background-color: var(--button-hover-bg);
-    color: var(--button-hover-fg);
+    background-color: var(--button-hover-bg); color: var(--button-hover-fg);
+    border: var(--border) var(--button-hover-border);
 }
 
 .button:active, .menu-button:active {
-    background-color: var(--button-active-bg);
-    color: var(--button-active-fg);
-}
-
-.button, .button:hover, .button:active, .menu-button, .menu-button:hover, .menu-button:active {
-	border: none;
+    background-color: var(--button-active-bg); color: var(--button-active-fg);
+    border: var(--border) var(--button-active-border);
 }
 
 .button {
@@ -188,6 +194,7 @@ img {
 
 .menu-button {
     font-size: var(--menu-button-text-size);
+    padding: var(--menu-button-padding);
 }
 
 .button img {
@@ -198,6 +205,18 @@ img {
 .menu-button img {
     width: var(--menu-button-image-size);
     vertical-align: -1px;
+}
+
+.menu-button-active-section, .menu-button-active-section:hover, .menu-button-active-section:focus, .menu-button-active-section:active {
+    background-color: var(--menu-button-active-section-bg); color: var(--menu-button-active-section-fg);
+    border: var(--border) var(--menu-button-active-section-border);
+    cursor: none;
+    user-select: none; pointer-events: none;
+}
+
+.avatar {
+    width: 128px;
+    border: var(--border) var(--image-avatar-border); border-radius: var(--border-radius);
 }
 
 .inversible {
@@ -219,18 +238,44 @@ img {
         --page-bg: #0f0f0f;
         --page-fg: #ffffff;
         --link-bg: transparent;
-        --link-fg: #aaaaaa;
-        --menu-bg: #222222;
-        --menu-fg: #aaaaaa;
-        --button-bg: #222222;
-        --button-fg: #aaaaaa;
-        --button-hover-bg: #333333;
+        --link-fg: #cccccc;
+        --menu-bg: #181818;
+        --menu-fg: #cccccc;
+        --button-bg: #181818;
+        --button-fg: #cccccc;
+        --button-border: #181818;
+        --button-hover-bg: #2c2c2c;
         --button-hover-fg: #ffffff;
-        --button-active-bg: #606060;
+        --button-hover-border: #808080;
+        --button-active-bg: #4c4c4c;
         --button-active-fg: #ffffff;
+        --button-active-border: #cccccc;
+        --menu-button-active-section-bg: #2c2c2c;
+        --menu-button-active-section-fg: #ffffff;
+        --menu-button-active-section-border: #ffffff;
+        --image-avatar-border: #ffffff;
     }
 
     .inversible {
         --inverse: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    :root {
+        --shadow: 0px 0px 5px;
+    }
+
+    .menu-button {
+        display: flex; justify-content: center;
+    }
+
+    .menu-button span {
+        display: none;
+    }
+    
+    .section {
+        padding: 16px;
+        width: calc(100% - 32px);
     }
 }

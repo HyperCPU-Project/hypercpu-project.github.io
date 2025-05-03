@@ -2,107 +2,135 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="icon" href="images/favicon.png">
-		<link rel="icon" href="images/favicon-dark.png" media="(prefers-color-scheme: dark)">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="icon" href="/images/logo/favicon.png">
+		<link rel="icon" href="/images/logo/favicon-dark.png" media="(prefers-color-scheme: dark)">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>HyperCPU Project</title>
 	</head>
-	<body>
+	<body onload="onload();" onhashchange="onload();">
         <div class="center"><div class="menu">
-            <a href="#home" onclick="javascript:switchSection('home');" class="button menu-button">
-                <img src="images/home.svg" class="inversible">
-                Home
+            <a href="#home" id="home-button" class="button menu-button">
+                <img src="/images/icons/home.svg" class="inversible">
+                <span>Home</span>
             </a>
-            <a href="#install" onclick="javascript:switchSection('install');" class="button menu-button">
-                <img src="images/install.svg" class="inversible">
-                Install
+            <a href="#projects" id="projects-button" class="button menu-button">
+                <img src="/images/icons/projects.svg" class="inversible">
+                <span>Projects</span>
             </a>
-            <a href="#docs" onclick="javascript:switchSection('docs');" class="button menu-button">
-                <img src="images/docs.svg" class="inversible">
-                Documentation
+            <a href="#gallery" id="gallery-button" class="button menu-button">
+                <img src="/images/icons/gallery.svg" class="inversible">
+                <span>Gallery</span>
             </a>
-            <a href="#faq" onclick="javascript:switchSection('faq');" class="button menu-button">
-                <img src="images/faq.svg" class="inversible">
-                FAQ
+            <a href="#faq" id="faq-button" class="button menu-button">
+                <img src="/images/icons/faq.svg" class="inversible">
+                <span>FAQ</span>
             </a>
-            <a href="#links" onclick="javascript:switchSection('links');" class="button menu-button">
-                <img src="images/links.svg" class="inversible">
-                Links
+            <a href="#team" id="team-button" class="button menu-button">
+                <img src="/images/icons/team.svg" class="inversible">
+                <span>Team</span>
             </a>
         </div></div>
-        <br>
-        <div class="content hidden text-center" id="home-section">
-            <img src="images/logo.png" class="inversible">
-            <h1>HyperCPU Project</h1>
-            <h3>
-                The <i>hyper</i> toolkit for custom <i>hyper</i> <abbr title="Instruction set architecture">ISA</abbr>.
-                <br>
-                An experimental project of HyperWin and contributors
-            </h3>
-            <br>
-            <div class="flex-row">
-                <a href="#install" onclick="javascript:switchSection('install');" class="button">
-                    <img src="images/install.svg" class="inversible">
-                    Install
-                </a>
-                <a href="#docs" onclick="javascript:switchSection('docs');" class="button">
-                    <img src="images/docs.svg" class="inversible">
-                    Read the manual
-                </a>
-                <a href="#links" onclick="javascript:switchSection('links');" class="button">
-                    <img src="images/contribute.svg" class="inversible">
-                    Contribute
-                </a>
+        <div class="section hidden center text-center" id="home-section">
+            <br><br>
+            <img src="/images/logo/logo.png" class="inversible">
+            <div>
+                <h1>HyperCPU Project</h1>
+                <h3>
+                    The <i>hyper</i> toolkit for custom <abbr title="Instruction set architecture">ISA</abbr>.
+                    <br>
+                    An experimental project of HyperWin and contributors.
+                </h3>
             </div>
+            <a href="#gallery"><img src="/images/gallery/hypercpu-x86_64-gnu-linux.png" class="gallery-image"></a>
             <br><br>
-            <img src="images/screenshot.png">
-            <br><br>
-            <h3>
-                The website is in active development and may contain a lot of bugs.
-                You can help the development by contributing to its <a href="https://github.com/HyperCPU-Project/hypercpu-project.github.io" target="_blank">GitHub repository</a>.
-            </h3>
         </div>
-        <div class="content hidden text-center" id="install-section">
+        <div class="section hidden text-center" id="projects-section">
             <br><br>
-            <h1>Install HyperCPU</h1>
+            <h1>Projects</h1>
             <br>
             <h2>HyperCPU ISA</h2>
-            <h3>HyperCPU ISA and its toolkit (assembler and emulator)</h3>
+            <h3>HyperCPU ISA and its toolkit (assembler and emulator).</h3>
             <br>
             <div class="flex-row">
                 <a href="https://github.com/HyperCPU-Project/HyperCPU" target="_blank" class="button">
-                    <img src="images/source-code.svg" class="inversible">
+                    <img src="images/icons/source-code.svg" class="inversible">
                     Source code
                 </a>
             </div>
             <br>
             <h2>Hyper C Compiler (hcc)</h2>
-            <h3>A multi-backend K&amp;R style C compiler with experimental HyperCPU support (as backend)</h3>
+            <h3>A multi-backend K&amp;R style C compiler with experimental HyperCPU support (as backend).</h3>
             <br>
             <div class="flex-row">
                 <a href="https://github.com/HyperCPU-Project/hcc" target="_blank" class="button">
-                    <img src="images/source-code.svg" class="inversible">
+                    <img src="images/icons/source-code.svg" class="inversible">
                     Source code
                 </a>
             </div>
             <br>
-            <h4>HyperCPU Project currently does not provide pre-compiled binaries for its tools, but we are working on it.</h4>
-            <h4>It is strongly adviced to read <i>README</i> before installing, since it contains many useful and important information about installation process.</h4>
+            <h2>hypercpu-project.github.io</h2>
+            <h3>The website you are reading now.</h3>
+            <br>
+            <div class="flex-row">
+                <a href="https://github.com/HyperCPU-Project/hypercpu-project.github.io" target="_blank" class="button">
+                    <img src="images/icons/source-code.svg" class="inversible">
+                    Source code
+                </a>
+            </div>
+            <br>
+            <h4>It is strongly adviced to read <i>README</i> file in every repository, since it contains many useful and important information about installation process.</h4>
         </div>
-        <div class="content hidden text-center" id="docs-section">
+        <div class="section hidden text-center" id="gallery-section">
             <br><br>
-            <h1>Documentation</h1>
-            <h3>Read <i>README</i> files in repositories you are interested in.</h4>
+            <h1>Gallery</h1>
+            <br>
+            <a href="/images/gallery/hypercpu-x86_64-gnu-linux.png" target="_blank">
+                <img alt="[screenshot]" src="/images/gallery/hypercpu-x86_64-gnu-linux.png" class="gallery-image">
+                <br>
+                <p><b>HyperCPU ISA running on 64-bit GNU/Linux system.</b></p>
+            </a>
+            <br>
+            <a href="/images/gallery/hypercpu-armv8l-android-termux.png" target="_blank">
+                <img alt="[screenshot]" src="/images/gallery/hypercpu-armv8l-android-termux.png" class="gallery-image">
+                <br>
+                <p><b>HyperCPU ISA running in Termux on Android 10.</b></p>
+            </a>
         </div>
-        <div class="content hidden text-center" id="faq-section">
+        <div class="section hidden text-center" id="faq-section">
             <br><br>
-            <h1><s>Frequently Asked</s> Questions</h1>
-            <h3>Nobody asked us any questions yet, unfortunately.</h3>
+            <div class="center">
+                <h1>Frequently Asked Questions</h1>
+                <h2>Why there is no *BSD support?</h2>
+                <p>
+                    HyperCPU ISA is known to fail building from sources or throw exceptions in unexpected moments under *BSD systems
+                    (i. e. FreeBSD — building is successful, but <code>hcemul</code> throws <code>std::exception</code> when working with console I/O; OpenBSD — EPIC FAIL).
+                    Furthermore, nobody asked us for it.<br>
+                    <br>
+                    Porting other HyperCPU Project utilities to *BSD systems makes no sense if HyperCPU ISA is not available on them.
+                </p>
+                <h2>Why there is no Windows support?</h2>
+                <p>
+                    To make a long story short: HyperCPU utilities use GNU/Linux system API functional which may be hard or even impossible to (re-)implement using Windows API.
+                </p>
+            </div>
         </div>
-        <div class="content hidden text-center" id="links-section">
+        <div class="section hidden text-center" id="team-section">
             <br><br>
-            <h1>Project Links</h1>
+            <h1>HyperCPU Project Team</h1>
+            <br>
+            <img src="https://avatars.githubusercontent.com/u/92534013?v=4" class="avatar">
+            <h2><a href="https://github.com/HyperWinX" target="_blank">HyperWin</a></h2>
+            <h4><i>HyperCPU Project Founder, HyperCPU Lead Developer and Documentation Author</i></h4>
+            <img src="https://avatars.githubusercontent.com/u/199128433?v=4" class="avatar">
+            <h2><a href="https://github.com/ivan-movchan" target="_blank">Ivan Movchan</a></h2>
+            <h4><i>HyperCPU Beta Tester, Website Developer, Artist</i></h4>
+            <img src="https://avatars.githubusercontent.com/u/158546973?v=4" class="avatar">
+            <h2><a href="https://github.com/aceinetx" target="_blank">aceinetx</a></h2>
+            <h4><i>Hyper C Compiler (hcc) Developer</i></h4>
+            <img src="https://avatars.githubusercontent.com/u/64192682?v=4" class="avatar">
+            <h2><a href="https://github.com/AshFungor" target="_blank">AshFungor</a></h2>
+            <h4><i>HyperCPU Developer</i></h4>
             <br>
             <div class="flex-row">
                 <a href="https://github.com/orgs/HyperCPU-Project" target="_blank" class="button">
@@ -112,17 +140,7 @@
                     Telegram
                 </a>
             </div>
-            <br>
-            <h1>Team Members</h1>
-            <h2><a href="https://github.com/HyperWinX" target="_blank">HyperWin</a></h2>
-            <h4><i>HyperCPU Project Founder, HyperCPU Lead Developer and Documentation Author</i></h4>
-            <h2><a href="https://github.com/ivan-movchan" target="_blank">Ivan Movchan</a></h2>
-            <h4><i>HyperCPU Beta Tester, Website Developer, Artist</i></h4>
-            <h2><a href="https://github.com/aceinetx" target="_blank">aceinetx</a></h2>
-            <h4><i>Hyper C Compiler (hcc) Developer</i></h4>
-            <h2><a href="https://github.com/AshFungor" target="_blank">AshFungor</a></h2>
-            <h4><i>HyperCPU Developer</i></h4>
         </div>
-        <script src="js/script.js" lang="JavaScript"></script>
+        <script src="/js/script.js" lang="JavaScript"></script>
 	</body>
 </html>
