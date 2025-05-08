@@ -11,16 +11,16 @@
 :root {
     --page-bg: #ffffff;
     --page-fg: #000000;
-    --link-fg: #888888;
-    --menu-bg: #eeeeee;
+    --link-fg: #404040;
+    --menu-bg: #f0f0f0;
     --menu-fg: #000000;
-    --button-bg: #eeeeee;
+    --button-bg: #f0f0f0;
     --button-fg: #000000;
-    --button-border: #eeeeee;
+    --button-border: #f0f0f0;
     --button-hover-bg: #cccccc;
     --button-hover-fg: #000000;
     --button-hover-border: #404040;
-    --button-active-bg: #888888;
+    --button-active-bg: #aaaaaa;
     --button-active-fg: #000000;
     --button-active-border: #000000;
     --menu-button-active-section-bg: #cccccc;
@@ -32,11 +32,13 @@
 :root {
     --padding: 8px 24px;
     --padding-left-right: 24px;
+    --padding-top-bottom: 8px;
     --button-padding: 16px 24px;
     --menu-button-padding: 8px 24px;
     --flex-gap: 8px 0px;
     --content-width: 800px;
-    --max-image-width: calc(var(--content-width) - calc(var(--padding-left-right) * 2));
+    --max-image-width: 720px;
+    --avatar-image-width: 180px;
     --font: 'Montserrat', system-ui, sans-serif;
     --font-italic: 'Montserrat Italic', system-ui, sans-serif;
     --font-size: 16px;
@@ -48,8 +50,9 @@
     --border-radius: 10px;
     --abbr-border: 2px dotted;
     --shadow: 0px 0px 20px;
-    --transition: 0.25s ease;
-    --menu-animation-time: 0.5s;
+    --transition-duration: 0.25s;
+    --transition: var(--transition-duration) ease;
+    --menu-animation-duration: 0.5s;
 }
 
 * {
@@ -57,6 +60,7 @@
 	scroll-behavior: smooth;
     scrollbar-width: var(--scrollbar-width);
 	scrollbar-color: var(--page-fg) var(--page-bg);
+    outline: none;
 }
 
 *::-webkit-scrollbar {
@@ -98,7 +102,7 @@ a {
     text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover, a:focus, a:active {
     color: var(--page-fg);
 }
 
@@ -111,15 +115,8 @@ i {
 }
 
 img {
-    width: 100%; max-width: fit-content;
-}
-
-.gallery-image {
-    box-shadow: var(--shadow) var(--link-fg);
-}
-
-.gallery-image:hover, .gallery-image:focus, .gallery-image:active, a:hover .gallery-image, a:focus .gallery-image, a:active .gallery-image {
-    box-shadow: var(--shadow) var(--page-fg);
+    width: 100%;
+    max-width: var(--max-image-width);
 }
 
 .center {
@@ -133,19 +130,28 @@ img {
 
 .flex-row {
     display: flex; flex-direction: row; justify-content: center; align-items: center;
-    gap: 0em 1em;
+    gap: 0px 8px;
 }
 
 .hidden {
     opacity: 0;
-    pointer-events: none; user-select: none;
     max-height: 0px;
+    pointer-events: none;
+    user-select: none;
 }
 
 .section {
     position: absolute;
-    margin: 64px auto;
-    max-height: 1000vh;
+    padding-bottom: 48px;
+}
+
+.content, .section {
+    width: 100%; max-width: var(--content-width);
+}
+
+.content {
+    margin: 96px auto;
+    height: max-content;
 }
 
 .menu, .button {
@@ -154,16 +160,12 @@ img {
 
 .menu {
     z-index: 1;
-    position: absolute; top: 8px;
+    position: absolute; top: 16px;
     margin: 0px auto; padding: 8px 16px;
     display: flex; justify-content: center; align-items: center;
     gap: 0px 4px;
     background-color: var(--menu-bg); color: var(--menu-fg);
-    animation: menu-animation var(--menu-animation-time) 0s 1 ease forwards;
-}
-
-.section {
-    width: 100%; max-width: var(--content-width);
+    animation: menu-animation var(--menu-animation-duration) 0s 1 ease forwards;
 }
 
 .button, .menu-button {
@@ -210,13 +212,19 @@ img {
 .menu-button-active-section, .menu-button-active-section:hover, .menu-button-active-section:focus, .menu-button-active-section:active {
     background-color: var(--menu-button-active-section-bg); color: var(--menu-button-active-section-fg);
     border: var(--border) var(--menu-button-active-section-border);
-    cursor: none;
-    user-select: none; pointer-events: none;
 }
 
-.avatar {
-    width: 128px;
+.avatar-image {
+    width: var(--avatar-image-width);
     border: var(--border) var(--image-avatar-border); border-radius: var(--border-radius);
+}
+
+.gallery-image, .avatar-image {
+    box-shadow: var(--shadow) var(--link-fg);
+}
+
+.gallery-image:hover, .gallery-image:focus, .gallery-image:active, .avatar-image:hover, .avatar-image:focus, .avatar-image:active {
+    box-shadow: var(--shadow) var(--page-fg);
 }
 
 .inversible {
@@ -244,7 +252,7 @@ img {
         --button-bg: #181818;
         --button-fg: #cccccc;
         --button-border: #181818;
-        --button-hover-bg: #2c2c2c;
+        --button-hover-bg: #222222;
         --button-hover-fg: #ffffff;
         --button-hover-border: #808080;
         --button-active-bg: #4c4c4c;
@@ -266,6 +274,11 @@ img {
         --shadow: 0px 0px 5px;
     }
 
+    .menu {
+        top: 0px;
+        border-radius: 0px 0px var(--border-radius) var(--border-radius);
+    }
+
     .menu-button {
         display: flex; justify-content: center;
     }
@@ -273,9 +286,21 @@ img {
     .menu-button span {
         display: none;
     }
-    
+
+    .content {
+        margin-top: 48px;
+    }
+
     .section {
         padding: 16px;
         width: calc(100% - 32px);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .flex-row {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px 0px;
     }
 }
