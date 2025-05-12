@@ -14,27 +14,31 @@
     --link-fg: #404040;
     --menu-bg: #f0f0f0;
     --menu-fg: #000000;
+    --menu-border: #cccccc;
+    --menu-shadow: #cccccc;
     --button-bg: #f0f0f0;
     --button-fg: #000000;
     --button-border: #f0f0f0;
-    --button-hover-bg: #cccccc;
+    --button-shadow: #f0f0f0;
+    --button-hover-bg: #eeeeee;
     --button-hover-fg: #000000;
-    --button-hover-border: #404040;
+    --button-hover-border: #444444;
+    --button-hover-shadow: #aaaaaa;
     --button-active-bg: #aaaaaa;
     --button-active-fg: #000000;
     --button-active-border: #000000;
+    --button-active-shadow: #444444;
     --menu-button-active-section-bg: #cccccc;
     --menu-button-active-section-fg: #000000;
     --menu-button-active-section-border: #000000;
-    --image-avatar-border: #404040;
+    --menu-button-active-section-shadow: transparent;
 }
 
 :root {
     --padding: 8px 24px;
     --padding-left-right: 24px;
     --padding-top-bottom: 8px;
-    --button-padding: 16px 24px;
-    --menu-button-padding: 8px 24px;
+    --button-padding: 8px 24px;
     --flex-gap: 8px 0px;
     --content-width: 800px;
     --max-image-width: 720px;
@@ -42,10 +46,8 @@
     --font: 'Montserrat', system-ui, sans-serif;
     --font-italic: 'Montserrat Italic', system-ui, sans-serif;
     --font-size: 16px;
-    --button-text-size: 20px;
-    --button-image-size: 32px;
-    --menu-button-text-size: 16px;
-    --menu-button-image-size: 24px;
+    --button-text-size: 16px;
+    --button-image-size: 24px;
     --border: 1px solid;
     --border-radius: 10px;
     --abbr-border: 2px dotted;
@@ -86,6 +88,7 @@ html, body {
 body {
     margin: 0px auto; padding: 0px 0px;
 	font-family: var(--font); font-size: var(--font-size);
+    line-height: 2em;
     overflow-y: scroll;
 }
 
@@ -129,7 +132,7 @@ img {
 }
 
 .flex-row {
-    display: flex; flex-direction: row; justify-content: center; align-items: center;
+    display: flex; flex-direction: row; align-items: stretch;
     gap: 0px 8px;
 }
 
@@ -142,7 +145,7 @@ img {
 
 .section {
     position: absolute;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
 }
 
 .content, .section {
@@ -151,67 +154,66 @@ img {
 
 .content {
     margin: 96px auto;
+}
+
+.content, .details-content {
     height: max-content;
 }
 
-.menu, .button {
+.menu, .button, .gallery-image, .avatar-image, .member-card {
     border-radius: var(--border-radius);
 }
 
 .menu {
     z-index: 1;
-    position: absolute; top: 16px;
-    margin: 0px auto; padding: 8px 16px;
+    position: fixed; top: 16px;
+    margin: 0px auto; padding: 8px 8px;
     display: flex; justify-content: center; align-items: center;
     gap: 0px 4px;
     background-color: var(--menu-bg); color: var(--menu-fg);
+    border: var(--border) var(--menu-border);
+    box-shadow: var(--shadow) var(--menu-shadow);
     animation: menu-animation var(--menu-animation-duration) 0s 1 ease forwards;
 }
 
 .button, .menu-button {
-	padding: var(--button-padding);
-    display: flex; justify-content: center; align-items: center;
-    gap: 0px 4px;
-    background-color: var(--button-bg);
-    color: var(--button-fg);
-    border: var(--border) var(--button-border);
     cursor: pointer; user-select: none;
     text-decoration: none;
-    line-height: 1;
+    padding: var(--button-padding);
+    display: flex; justify-content: center; align-items: center;
+    gap: 0px 8px;
 }
 
-.button:hover, .menu-button:hover, .button:focus, .menu-button:focus {
+.button, .menu-button, .member-card {
+    background-color: var(--button-bg); color: var(--button-fg);
+    border: var(--border) var(--button-border);
+    box-shadow: var(--shadow) var(--button-shadow);
+}
+
+.button:hover, .menu-button:hover, .member-card:hover {
     background-color: var(--button-hover-bg); color: var(--button-hover-fg);
     border: var(--border) var(--button-hover-border);
+    box-shadow: var(--shadow) var(--button-hover-shadow);
 }
 
 .button:active, .menu-button:active {
     background-color: var(--button-active-bg); color: var(--button-active-fg);
     border: var(--border) var(--button-active-border);
+    box-shadow: var(--shadow) var(--button-active-shadow);
 }
 
 .button {
     font-size: var(--button-text-size);
 }
 
-.menu-button {
-    font-size: var(--menu-button-text-size);
-    padding: var(--menu-button-padding);
-}
-
 .button img {
     width: var(--button-image-size);
-    vertical-align: -1px;
-}
-
-.menu-button img {
-    width: var(--menu-button-image-size);
-    vertical-align: -1px;
 }
 
 .menu-button-active-section, .menu-button-active-section:hover, .menu-button-active-section:focus, .menu-button-active-section:active {
     background-color: var(--menu-button-active-section-bg); color: var(--menu-button-active-section-fg);
     border: var(--border) var(--menu-button-active-section-border);
+    box-shadow: var(--shadow) var(--menu-button-active-section-shadow);
 }
 
 .avatar-image {
@@ -220,11 +222,18 @@ img {
 }
 
 .gallery-image, .avatar-image {
+    border: var(--border) var(--link-fg);
     box-shadow: var(--shadow) var(--link-fg);
 }
 
-.gallery-image:hover, .gallery-image:focus, .gallery-image:active, .avatar-image:hover, .avatar-image:focus, .avatar-image:active {
+.gallery-image:hover, .gallery-image:focus, .avatar-image:hover, .avatar-image:focus,
+a:hover .gallery-image, a:focus .gallery-image, a:hover .avatar-image, a:focus .avatar-image {
+    border: var(--border) var(--page-fg);
     box-shadow: var(--shadow) var(--page-fg);
+}
+
+.inline {
+    display: inline;
 }
 
 .inversible {
@@ -245,23 +254,27 @@ img {
     :root {
         --page-bg: #0f0f0f;
         --page-fg: #ffffff;
-        --link-bg: transparent;
         --link-fg: #cccccc;
-        --menu-bg: #181818;
+        --menu-bg: #222222;
         --menu-fg: #cccccc;
-        --button-bg: #181818;
+        --menu-border: #cccccc;
+        --menu-shadow: #cccccc;
+        --button-bg: #222222;
         --button-fg: #cccccc;
-        --button-border: #181818;
-        --button-hover-bg: #222222;
+        --button-border: #222222;
+        --button-shadow: transparent;
+        --button-hover-bg: #333333;
         --button-hover-fg: #ffffff;
-        --button-hover-border: #808080;
-        --button-active-bg: #4c4c4c;
+        --button-hover-border: #ffffff;
+        --button-hover-shadow: #cccccc;
+        --button-active-bg: #666666;
         --button-active-fg: #ffffff;
-        --button-active-border: #cccccc;
-        --menu-button-active-section-bg: #2c2c2c;
+        --button-active-border: #ffffff;
+        --button-active-shadow: #ffffff;
+        --menu-button-active-section-bg: #666666;
         --menu-button-active-section-fg: #ffffff;
         --menu-button-active-section-border: #ffffff;
-        --image-avatar-border: #ffffff;
+        --menu-button-active-section-shadow: transparent;
     }
 
     .inversible {
@@ -274,11 +287,6 @@ img {
         --shadow: 0px 0px 5px;
     }
 
-    .menu {
-        top: 0px;
-        border-radius: 0px 0px var(--border-radius) var(--border-radius);
-    }
-
     .menu-button {
         display: flex; justify-content: center;
     }
@@ -288,7 +296,7 @@ img {
     }
 
     .content {
-        margin-top: 48px;
+        margin-top: 72px;
     }
 
     .section {

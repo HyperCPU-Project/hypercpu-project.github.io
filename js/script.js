@@ -16,7 +16,7 @@ function onload() {
     var currentSection = document.getElementById(currentSectionID);
     var currentSectionName = currentSection.dataset.name;
     var currentMenuButton = document.getElementById(currentSectionID.replace("section", "button"));
-
+    
     document.title = "HyperCPU Project" + ((currentSectionName.length !== 0) ? (": " + currentSectionName) : "");
 
     currentSection.style.display = "inherit";
@@ -52,4 +52,8 @@ function onload() {
             };
         };
     }, transitionDuration);
+    
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, (transitionDuration * 2));
 };
