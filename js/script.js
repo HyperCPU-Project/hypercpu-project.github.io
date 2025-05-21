@@ -7,10 +7,7 @@ function onload() {
 
     if (document.baseURI.lastIndexOf("#") !== -1) {
         currentSectionID = document.baseURI.substring(document.baseURI.lastIndexOf("#") + 1).toLowerCase() + "-section";
-
-        if (document.getElementById(currentSectionID) === null) {
-            currentSectionID = sections[0].id;
-        };
+        currentSectionID = (document.getElementById(currentSectionID) === null) ? sections[0].id : currentSectionID;
     };
 
     var currentSection = document.getElementById(currentSectionID);
@@ -53,7 +50,5 @@ function onload() {
         };
     }, transitionDuration);
     
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, (transitionDuration * 2));
+    setTimeout(() => { window.scrollTo(0, 0); }, (transitionDuration * 2));
 };
