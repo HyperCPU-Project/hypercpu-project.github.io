@@ -2,7 +2,7 @@
 
 This repository contains source code of HyperCPU Project website — https://hypercpu-project.github.io.
 
-The website does not use React.js, Node.js or any other popular Web frameworks. HTML5, CSS3 and JavaScript are used only.
+The website does not use React.js, Node.js or any other popular Web frameworks. Pure HTML5 and CSS3 are used only.
 
 ### Contributing
 
@@ -18,7 +18,7 @@ The website uses [Material Symbols](https://fonts.google.com/icons?icon.set=Mate
 
 GitHub and Telegram icons are provided by [Font Awesome](https://fontawesome.com/) project (Free for Web) and are licensed under the terms of [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
-The website design was inspired by [ShareX](https://getsharex.com) and [Return YouTube Dislike](https://returnyoutubedislike.com/) websites.
+The website design was inspired by [ShareX](https://getsharex.com), [Void Linux](https://voidlinux.org) and [Return YouTube Dislike](https://returnyoutubedislike.com/) websites.
 
 ### License
 
