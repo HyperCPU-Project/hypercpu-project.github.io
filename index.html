@@ -10,222 +10,40 @@
 		<title>HyperCPU Project</title>
 	</head>
 	<body>
-        <div class="center">
-            <div class="menu">
-                <a href="#home" id="home-button" class="button menu-button">
-                    <img src="/images/icons/home.svg" class="inversed">
-                    <span>Home</span>
+        <div class="center text-center">
+            <img src="https://raw.githubusercontent.com/HyperCPU-Project/artwork/master/logo/hypercpu-project/logo.png" alt="HyperCPU Project" id="logo">
+            <div>
+                <h3>We develop an experimental ISA and various software working with it.</h3>
+            </div>
+            <div class="contact-box flex-row center">
+                <a href="https://github.com/orgs/HyperCPU-Project" target="_blank" class="button">
+                    <img src="/images/icons/github.svg" class="inversed">
+                    <span>GitHub</span>
                 </a>
-                <a href="#projects" id="projects-button" class="button menu-button">
-                    <img src="/images/icons/projects.svg" class="inversed">
-                    <span>Projects</span>
-                </a>
-                <a href="#gallery" id="gallery-button" class="button menu-button">
-                    <img src="/images/icons/gallery.svg" class="inversed">
-                    <span>Gallery</span>
-                </a>
-                <a href="#faq" id="faq-button" class="button menu-button">
-                    <img src="/images/icons/faq.svg" class="inversed">
-                    <span>FAQ</span>
-                </a>
-                <a href="#team" id="team-button" class="button menu-button">
-                    <img src="/images/icons/team.svg" class="inversed">
-                    <span>Team</span>
+                <a href="https://t.me/HyperCPUProject" target="_blank" class="button">
+                    <img src="/images/icons/telegram.svg" class="inversed">
+                    <span>Telegram</span>
                 </a>
             </div>
+            <div class="gallery-box">
+                <img src="/images/gallery/hypercpu-x86_64-gnu-linux.png" alt="[screenshot]" class="gallery-image">
+                <i>HyperCPU running on 64-bit GNU/Linux system.</i>
+                <br>
+                <img src="/images/gallery/hypercpu-x86_64-wsl2.png" alt="[screenshot]" class="gallery-image">
+                <i>HyperCPU running on Windows 11 in Windows Subsystem for Linux.</i>
+                <br>
+                <img src="/images/gallery/hypercpu-armv8l-android-termux.png" alt="[screenshot]" class="gallery-image">
+                <i>HyperCPU running on Android 10 in Termux.</i>
+                <br>
+                <img src="/images/gallery/hcc-x86_64-gnu-linux.png" alt="[screenshot]" class="gallery-image">
+                <i>Hyper C Compiler (hcc) running on 64-bit GNU/Linux system.</i>
+                <br>
+                <img src="/images/gallery/typical-dev-workspace.png" alt="[screenshot]" class="gallery-image">
+                <img src="/images/gallery/typical-dev-workspace-2.png" alt="[screenshot]" class="gallery-image">
+                <i>Typical HyperCPU Project developer workspace.</i>
+            </div>
+            <br>
+            <p><sub>Copyright &copy; 2024-2025 <a href="https://github.com/orgs/HyperCPU-Project/people" target="_blank">HyperCPU Project contributors</a>.</sub></p>
         </div>
-        <div class="content">
-            <div class="section" id="home">
-                <div class="center flex-row" id="logo-container">
-                    <img src="/images/logo/logo.png" id="logo">
-                    <div>
-                        <h1>HyperCPU Project</h1>
-                        <h3>The <i>hyper</i> experimental project of custom ISA and its toolkit.</h3>
-                    </div>
-                </div>
-                <br>
-                <h2 align="center">Welcome!</h2>
-                <p>You have reached the official homepage of <b>HyperCPU Project</b>, which provides an experimental custom ISA (instruction set architecture) and various tools for it.</p>
-                <p><b>HyperCPU Project</b> software is free (as in freedom). You can find source code and binaries of our projects easily from <a href="#projects">"Projects"</a> section.</p>
-                <p><b>HyperCPU Project</b> is developed and maintained by <a href="#team">volunteers</a>. You also become a part of our community too! We welcome everyone wishing to contribute.</p>
-                <p>Should you have any questions, read <a href="#faq">FAQ</a> or project documentation firstly. Contact us if your problem stays unresolved.</p>
-                <p><sub>(No, our project is not related to CPU identification utilities like CPU-Z, as you might think.)</sub></p>
-            </div>
-            <div class="section" id="projects" data-name="Projects">
-                <h1 align="center">Projects</h1>
-                <br>
-                <h2>HyperCPU</h2>
-                <h4><i>C++20&ensp;/&ensp;2024&nbsp;&mdash; present time</i></h4>
-                <p>An experimental ISA and its toolkit, which includes its own assembler (hcasm) and CPU emulator (hcemul). The main software project of <b>HyperCPU Project</b>.</p>
-                <p><i>Maintainers: HyperWin (author), aceinetx, AshFungor.</i></p>
-                <div class="flex-row">
-                    <a href="https://github.com/HyperCPU-Project/HyperCPU" target="_blank" class="button">
-                        <img src="/images/icons/source-code.svg" class="inversed">
-                        <span>Source code</span>
-                    </a>
-                    <a href="https://github.com/HyperCPU-Project/HyperCPU/blob/master/README.md" target="_blank" class="button">
-                        <img src="/images/icons/docs.svg" class="inversed">
-                        <span>Documentation</span>
-                    </a>
-                </div>
-                <br>
-                <h2>Hyper C Compiler (hcc)</h2>
-                <h4><i>C++20, C90&ensp;/&ensp;2025&nbsp;&mdash; present time</i></h4>
-                <p>A multi-backend K&amp;R-style C compiler with experimental HyperCPU ISA support as backend.</p>
-                <p><i>Maintainer: aceinetx (author).</i></p>
-                <div class="flex-row">
-                    <a href="https://github.com/HyperCPU-Project/hcc" target="_blank" class="button">
-                        <img src="/images/icons/source-code.svg" class="inversed">
-                        <span>Source code</span>
-                    </a>
-                    <a href="https://github.com/HyperCPU-Project/hcc/blob/master/README.md" target="_blank" class="button">
-                        <img src="/images/icons/docs.svg" class="inversed">
-                        <span>Documentation</span>
-                    </a>
-                </div>
-                <br>
-                <h2>hypercpu-project.github.io</h2>
-                <h4><i>HTML5, CSS3&ensp;/&ensp;2025&nbsp;&mdash; present time</i></h4>
-                <p>The website you are reading now.</p>
-                <p><i>Maintainer: Ivan Movchan (author).</i></p>
-                <div class="flex-row">
-                    <a href="https://github.com/HyperCPU-Project/hypercpu-project.github.io" target="_blank" class="button">
-                        <img src="/images/icons/source-code.svg" class="inversed">
-                        <span>Source code</span>
-                    </a>
-                    <a href="https://github.com/HyperCPU-Project/hypercpu-project.github.io/blob/master/README.md" target="_blank" class="button">
-                        <img src="/images/icons/docs.svg" class="inversed">
-                        <span>Documentation</span>
-                    </a>
-                </div>
-            </div>
-            <div class="section text-center" id="gallery" data-name="Gallery">
-                <h1>Gallery</h1>
-                <h4>Have a look at these images to get a quick impression of the project.</h4>
-                <br>
-                <div class="gallery-box">
-                    <figure class="image">
-                        <a href="/images/gallery/hypercpu-x86_64-gnu-linux.png" target="_blank"><img alt="[image]" loading="lazy" src="/images/gallery/hypercpu-x86_64-gnu-linux.png" class="gallery-image"></a>
-                        <figcaption><sub>HyperCPU running on 64-bit GNU/Linux system <i>(Ivan Movchan)</i></sub></figcaption>
-                    </figure>
-                    <figure class="image">
-                        <a href="/images/gallery/hypercpu-armv8l-android-termux.png" target="_blank"><img alt="[image]" loading="lazy" src="/images/gallery/hypercpu-armv8l-android-termux.png" class="gallery-image"></a>
-                        <figcaption><sub>HyperCPU running in Termux on Android 10 <i>(Ivan Movchan)</i></sub></figcaption>
-                    </figure >
-                    <figure class="image">
-                        <a href="/images/gallery/hypercpu-x86_64-wsl2.png" target="_blank"><img alt="[image]" loading="lazy" src="/images/gallery/hypercpu-x86_64-wsl2.png" class="gallery-image"></a>
-                        <figcaption><sub>HyperCPU running on 64-bit Windows Subsystem for Linux (WSL2) <i>(Ivan Movchan)</i></sub></figcaption>
-                    </figure>
-                    <figure class="image">
-                        <a href="/images/gallery/hcc-x86_64-gnu-linux.png" target="_blank"><img alt="[image]" loading="lazy" src="/images/gallery/hcc-x86_64-gnu-linux.png" class="gallery-image"></a>
-                        <figcaption><sub>Hyper C Compiler (hcc) running on 64-bit GNU/Linux system <i>(Ivan Movchan)</i></sub></figcaption>
-                    </figure>
-                    <figure class="image">
-                        <a href="/images/gallery/typical-dev-workspace.png" target="_blank"><img alt="[image]" loading="lazy" src="/images/gallery/typical-dev-workspace.png" class="gallery-image"></a>
-                        <figcaption><sub>Typical HyperCPU Project developer workspace <i>(HyperWin)</i></sub></figcaption>
-                    </figure>
-                    <figure class="image">
-                        <a href="/images/gallery/typical-dev-workspace-2.png" target="_blank"><img alt="[image]" loading="lazy" src="/images/gallery/typical-dev-workspace-2.png" class="gallery-image"></a>
-                        <figcaption><sub>Typical HyperCPU Project developer workspace 2 <i>(HyperWin)</i></sub></figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="section" id="faq" data-name="Frequently Asked Questions">
-                <h1 align="center">FAQ (Frequently Asked Questions)</h1>
-                <h3 align="center">Strongly recommended to be read.</h3>
-                <br>
-                <h2>Troubleshooting</h2>
-                <div class="flex-column">
-                    <details>
-                        <summary><b>I want to report an error/bug, what should I do?</b></summary>
-                        <p>
-                            If you have GitHub account, open project repository and create a new issue.
-                            You can also contact project maintainers privately.
-                            It will also be great if you tell us your operating system version and attach some screenshots or console logs of the error/bug.
-                        </p>
-                    </details>
-                </div>
-                <br>
-                <h2>Porting</h2>
-                <div class="flex-column">
-                    <details>
-                        <summary><b>Why there is no *BSD support?</b></summary>
-                        <p>
-                            HyperCPU ISA is known to fail building from sources or throw exceptions in unexpected moments under *BSD systems.
-                            Porting other HyperCPU Project utilities to *BSD systems makes no sense if HyperCPU is not available on them.
-                        </p>
-                    </details>
-                    <details>
-                        <summary><b>Why there is no Windows support?</b></summary>
-                        <p>
-                            To make a long story short: HyperCPU Project software uses GNU/Linux system API functional which may be hard or even impossible to (re-)implement using Windows API.
-                        </p>
-                    </details>
-                </div>
-            </div>
-            <div class="section" id="team" data-name="Team">
-                <h1 align="center">Project Team</h1>
-                <h3 align="center">These wonderful people are contributing (or have contributed) to the project.</h3>
-                <br>
-                <div class="team-box">
-                    <figure class="image">
-                        <img loading="lazy" src="https://github.com/HyperWinX.png" class="avatar-image">
-                        <figcaption>
-                            <h3>HyperWin</h3>
-                            <p>HyperCPU Project founder, HyperCPU lead developer and documentation author.</p>
-                            <div class="flex-row contact-box">
-                                <a href="https://github.com/HyperWinX" target="_blank"><img src="/images/icons/github.svg" class="icon inversed" alt="[GitHub]"></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <figure class="image">
-                        <img loading="lazy" src="https://github.com/AshFungor.png" class="avatar-image">
-                        <figcaption>
-                            <h3>AshFungor</h3>
-                            <p>HyperCPU ISA developer.</p>
-                            <div class="flex-row contact-box">
-                                <a href="https://github.com/AshFungor" target="_blank"><img src="/images/icons/github.svg" class="icon inversed" alt="[GitHub]"></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <figure class="image">
-                        <img loading="lazy" src="https://github.com/aceinetx.png" class="avatar-image">
-                        <figcaption>
-                            <h3>aceinetx</h3>
-                            <p>Hyper C Compiler (hcc) developer.</p>
-                            <div class="flex-row contact-box">
-                                <a href="https://github.com/aceinetx" target="_blank"><img src="/images/icons/github.svg" class="icon inversed" alt="[GitHub]"></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                    <figure class="image">
-                        <img loading="lazy" src="https://github.com/ivan-movchan.png" class="avatar-image">
-                        <figcaption>
-                            <h3>Ivan Movchan</h3>
-                            <p>HyperCPU Project artist and website maintainer.</p>
-                            <div class="flex-row contact-box">
-                                <a href="https://ivan-movchan.github.io" target="_blank"><img src="/images/icons/website.svg" class="icon inversed" alt="[Website]"></a>
-                                <a href="https://github.com/ivan-movchan" target="_blank"><img src="/images/icons/github.svg" class="icon inversed" alt="[GitHub]"></a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                <br>
-                <h2 align="center">Join us!</h2>
-                <div class="flex-row center">
-                    <a href="https://github.com/orgs/HyperCPU-Project" target="_blank" class="button">
-                        <img src="/images/icons/github.svg" class="inversed">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://t.me/HyperCPUProject" target="_blank" class="button">
-                        <img src="/images/icons/telegram.svg" class="inversed">
-                        <span>Telegram</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <hr noshade>
-        <p align="center">Copyright &copy; 2024-2025 HyperCPU Project. Powered by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
-        <br>
 	</body>
 </html>
