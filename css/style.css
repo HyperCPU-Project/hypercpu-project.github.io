@@ -61,10 +61,14 @@ html, body {
 body {
     margin: 8px auto;
     padding: 24px 32px;
-    max-width: 1024px;
 	font-family: var(--font);
     font-size: var(--font-size);
     line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+body, img, .gallery-box img:hover {
+    max-width: 800px;
 }
 
 h1, h2, h3, h4, h5, h6, b, .button {
@@ -159,7 +163,7 @@ hr {
 }
 
 .gallery-box img {
-    max-width: 800px;
+    max-width: 480px;
     border: var(--border) var(--link-fg);
 }
 
@@ -172,7 +176,16 @@ hr {
 }
 
 #logo {
-    max-width: 880px;
+    max-width: 256px;
+    transform: rotate(0deg);
+}
+
+#logo:hover {
+    transform: rotate(360deg);
+}
+
+#logo, #logo:hover {
+    transition: 2s ease;
 }
 
 @media screen and (max-width: 720px) {
