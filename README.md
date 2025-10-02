@@ -1,21 +1,21 @@
-# HyperCPU Project website
+# https://hypercpu-project.github.io
 
-This repository contains source code of HyperCPU Project website&nbsp;&mdash; https://hypercpu-project.github.io.
+This is HyperCPU Project website.
 
-### Contributing
+## Contributing
 
-Do not hesitate to report bugs or suggest any ideas using "Issues" page. Any feedback and contributing is welcome.
+Any feedback and contributions are welcome. Report bugs and suggest new ideas using ["Issues"](https://github.com/HyperCPU-Project/hypercpu-project.github.io/issues) page. You are free to fork the repository, improve the project and send a pull request.
 
-### Acknowledgments
+## Authors
 
-The website uses [Montserrat](https://fonts.google.com/specimen/Montserrat) font family kindly provided by [Google Fonts](https://fonts.google.com) project. Montserrat fonts are licensed under the terms of the [SIL Open Font License, Version 1.1](fonts/MontserratLicense.txt).
+- Design, [artwork](https://github.com/HyperCPU-Project/artwork) and development: [Ivan Movchan](https://github.com/ivan-movchan).
+
+## Acknowledgments
+
+The website uses [Montserrat](https://fonts.google.com/specimen/Montserrat) font family provided by [Google Fonts](https://fonts.google.com) project. Montserrat fonts are licensed under the terms of the [SIL Open Font License, Version 1.1](fonts/LICENSE).
 
 GitHub and Telegram icons are provided by [Font Awesome](https://fontawesome.com/) project (Free for Web) and are licensed under the terms of [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
-The former website design was inspired by [ShareX](https://getsharex.com), [Void Linux](https://voidlinux.org) and [Return YouTube Dislike](https://returnyoutubedislike.com/) websites.
+## License
 
-### License
-
-The source code of the website is licensed under the [MIT License](LICENSE).
-
-The project artwork license is available [here](https://github.com/HyperCPU-Project/artwork/blob/master/LICENSE).
+[MIT License](LICENSE)
