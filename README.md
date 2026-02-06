@@ -1,6 +1,6 @@
 # https://hypercpu-project.github.io
 
-This is HyperCPU Project website.
+HyperCPU Project web site.
 
 ## Contributing
 
@@ -12,7 +12,7 @@ Any feedback and contributions are welcome. Report bugs and suggest new ideas us
 
 ## Acknowledgments
 
-The website uses [Montserrat](https://fonts.google.com/specimen/Montserrat) font family provided by [Google Fonts](https://fonts.google.com) project. Montserrat fonts are licensed under the terms of the [SIL Open Font License, Version 1.1](fonts/LICENSE).
+The web site uses [Montserrat](https://fonts.google.com/specimen/Montserrat) font family provided by [Google Fonts](https://fonts.google.com) project. Montserrat fonts are licensed under the terms of the [SIL Open Font License, Version 1.1](fonts/LICENSE).
 
 GitHub and Telegram icons are provided by [Font Awesome](https://fontawesome.com/) project (Free for Web) and are licensed under the terms of [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 
