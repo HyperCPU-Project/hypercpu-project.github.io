@@ -11,16 +11,7 @@
 :root {
     --page-bg: #0f0f0f;
     --page-fg: #ffffff;
-    --link-fg: #aaaaaa;
-    --button-bg: transparent;
-    --button-fg: #aaaaaa;
-    --button-border: #aaaaaa;
-    --button-hover-bg: #222222;
-    --button-hover-fg: #ffffff;
-    --button-hover-border: #ffffff;
-    --button-active-bg: #404040;
-    --button-active-fg: #ffffff;
-    --button-active-border: #ffffff;
+    --link-fg: #cccccc;
     --font: 'Montserrat', system-ui, sans-serif;
     --font-italic: 'Montserrat Italic', system-ui, sans-serif;
     --font-size: 18px;
@@ -64,14 +55,13 @@ body {
 	font-family: var(--font);
     font-size: var(--font-size);
     line-height: 1.4;
-    letter-spacing: -0.5px;
 }
 
 body, img, .gallery-box img:hover {
     max-width: 800px;
 }
 
-h1, h2, h3, h4, h5, h6, b, .button {
+h1, h2, h3, h4, h5, h6, b {
 	font-weight: 600;
 }
 
@@ -101,78 +91,58 @@ hr {
     background-color: var(--page-fg);
 }
 
+th, td {
+    padding: 8px 0px;
+}
+
+th {
+    text-align: left;
+    padding-right: 32px;
+}
+
 .center {
-	display: flex; flex-direction: column; justify-content: center; align-items: center;
-    gap: 16px 0px;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.flex-column {
-    display: flex; flex-direction: column; align-items: stretch;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 16px 0px;
 }
 
 .flex-row {
-    display: flex; flex-direction: row; align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 0px 16px;
 }
 
-.button, .gallery-image, .avatar-image, details {
+.gallery-box img {
     border-radius: var(--border-radius);
-}
-
-.button {
-    cursor: pointer;
-    user-select: none;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0px 12px;
-    padding: 8px 24px;
-    background-color: var(--button-bg);
-    color: var(--button-fg);
-    border: var(--border) var(--button-border);
-}
-
-.button:hover {
-    background-color: var(--button-hover-bg);
-    color: var(--button-hover-fg);
-    border: var(--border) var(--button-hover-border);
-}
-
-.button:active {
-    background-color: var(--button-active-bg);
-    color: var(--button-active-fg);
-    border: var(--border) var(--button-active-border);
-}
-
-.button img, .icon {
-    width: 32px;
 }
 
 .gallery-box {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px 0px;
-    margin-top: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 0px;
+}
+
+.gallery-box figure {
+    max-width: 320px;
 }
 
 .gallery-box img {
-    max-width: 480px;
-    border: var(--border) var(--link-fg);
-}
-
-.gallery-box img:hover {
     border: var(--border) var(--page-fg);
 }
 
-.inversed {
-    filter: invert(1);
+.gallery-box figcaption {
+    padding: 8px;
+    text-align: center;
+    color: var(--page-fg);
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
 }
 
 #logo {
@@ -186,19 +156,4 @@ hr {
 
 #logo, #logo:hover {
     transition: 2s ease;
-}
-
-@media screen and (max-width: 720px) {
-    :root {
-        --font-size: 16px;
-    }
-    
-    .button {
-        gap: 0px 8px;
-        padding: 8px 16px;
-    }
-    
-    .button img, .icon {
-        width: 24px;
-    }
 }
